@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "name": "extension-svelte-test",
+  "description": "An Extension.js example.",
+  "icons": {
+    "48": "images/extension_48.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search*"],
+      "js": ["./content/google_entrypoint.ts"],
+      "run_at": "document_end"
+    }
+  ],
+  "author": "Your Name"
+}
