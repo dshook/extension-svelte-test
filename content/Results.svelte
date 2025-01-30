@@ -1,7 +1,7 @@
 <script lang="ts">
-  let message = "Welcome to your Svelte Extension.";
+  import { countState } from "./sharedState.svelte";
 
-  let count = $state(0);
+  let message = "Welcome to your Svelte Extension.";
 </script>
 
 <header>
@@ -9,5 +9,13 @@
     <br />
     {message}
   </h1>
-  <button onclick={() => count++}>Hi, I've been clicked {count}</button>
+  <button onclick={() => countState.count++}
+    >Hi, I've been clicked {countState.count}</button
+  >
 </header>
+
+<style>
+  h1 {
+    font-weight: bold;
+  }
+</style>
